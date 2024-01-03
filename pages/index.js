@@ -1,15 +1,17 @@
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession,} from "next-auth/react"
+import Layout from '../components/Layout'
 
 export default function Home() {
   const { data: session } = useSession()
-  if(session) {
-    return <>
-      Signed in as {session.user.email} <br/>
-      <button onClick={() => signOut()}>Sign out</button>
-    </>
+  console.log("session",session)
+return(
+      <Layout >
+        <div>
+      Signed in as{session?.user?.name}  <br/>
+
+        </div>
+      
+    </Layout>
+)
   }
-  return <>
-    Not signed in <br/>
-    <button onClick={() => signIn('google')}>Sign in</button>
-  </>
-}
+  
