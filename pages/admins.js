@@ -1,5 +1,9 @@
+import Layout from "../components/Layout";
 export default function admins(){
     return (
-        <h1>Admins</h1>
+        <Layout>
+
+            <h1>admins</h1>
+        </Layout>
     )
 }

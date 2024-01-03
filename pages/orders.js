@@ -1,5 +1,9 @@
+import Layout from "../components/Layout";
 export default function orders(){
     return (
-        <h1>orders</h1>
+        <Layout>
+
+            <h1>orders</h1>
+        </Layout>
     )
 }
