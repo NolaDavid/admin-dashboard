@@ -3,18 +3,53 @@
 @import "tailwindcss/utilities";
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom, #8B4513, #D2691E);
-    color: white;
-    width: 200px;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #8b4513, #d2691e);
+  color: white;
+  width: 200px;
+  height: 100%;
 }
 .main {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 .content {
-    flex: 1;
+  flex: 1;
+}
+.sidebar--logout {
+    display: flex;
+    position: relative;
+  
     
 }
+.sidebar-lob {
+    position: absolute;
+    bottom: 0;
+}
+.layout--logout {
+border-color: rgb(1, 40, 92);
+  margin: 25% 25%;
+
+}
+.layout-title{
+    color: white;
+    background-color: hsl(218, 77%, 35%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin-bottom: 5px;
+
+}
+.centered-span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(218, 77%, 35%);
+  }
+  .orders--container {
+    display: flex;
+    background-color: red;
+  }
