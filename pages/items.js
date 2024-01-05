@@ -6,7 +6,15 @@ export default function items(){
   const [productPrice, setProductPrice] = useState('333')
   const [productDescription, setProductDescription] = useState('333')
 
-
+  const handlePriceChange = (event) =>{
+    setProductPrice(event.target.value)
+  }
+  const handleTitleChange = (event) =>{
+    setProductTitle(event.target.value)
+  }
+  const handleDescriptionChange = (event) =>{
+    setProductDescription(event.target.value)
+  }
     return(
       <Layout>
  <section className="bg-white dark:bg-gray-900 rounded">
@@ -24,7 +32,7 @@ export default function items(){
                   Product Name
                 </label>
                 <input
-                onChange={setProductTitle}
+                onChange={handleTitleChange}
                 value={productTitle}
                   type="text"
                   name="name"
@@ -46,7 +54,7 @@ export default function items(){
                   type="number"
                   name="price"
                   id="price"
-                  onChange={setProductPrice}
+                  onChange={handlePriceChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="$2999"
                   required=""
@@ -86,14 +94,14 @@ export default function items(){
                   id="description"
                   rows="8"
                   value={productDescription}
-                  onChange={setProductDescription}
+                  onChange={handleDescriptionChange}
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Your description here"
                 ></textarea>
               </div>
             </div>
             <Link className="flex flex-col gap-2 ml-4 " href={"/products"}>
-              <button onClick={() =>  console.log(productDescription,productPrice)} className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-amber-700"
+              <button onClick={() =>  console.log(productDescription,productPrice,productTitle)} className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-amber-700"
 >             Add Product
 
               </button>

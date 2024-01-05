@@ -1,4 +1,18 @@
 export default function Card(props) {
 console.log("props",props)
-return(<h1>Card Title?</h1>)
+return(
+    <div>
+        <div>
+
+<h1>{props.title}</h1>
+        </div>
+        <div>
+            <span>{props.value}</span>
+        </div>
+
+    </div>
+
+
+
+)
 }

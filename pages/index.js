@@ -1,6 +1,7 @@
 import { useSession,} from "next-auth/react"
 import Layout from '../components/Layout'
 import Orders from '../components/Orders'
+import Revenue from '../components/Revenue'
 // import Revenue from '../components/Revenue'
 
 export default function Home() {
@@ -12,6 +13,7 @@ return(
       Hello{session?.user?.name}  <br/>
 
       <Orders />
+      <Revenue />
         </div>
 
       
