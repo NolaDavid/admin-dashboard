@@ -55,4 +55,5 @@ border-color: rgb(1, 40, 92);
   }
 body {
   background: linear-gradient(to bottom, #8b4513, #d2691e);
+  color: white;
 }
