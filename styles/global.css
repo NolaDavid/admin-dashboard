@@ -5,7 +5,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, #8b4513, #d2691e);
+  
   color: white;
   width: 200px;
   height: 100%;
@@ -53,3 +53,6 @@ border-color: rgb(1, 40, 92);
     display: flex;
     background-color: red;
   }
+body {
+  background: linear-gradient(to bottom, #8b4513, #d2691e);
+}

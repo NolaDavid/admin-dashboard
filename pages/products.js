@@ -1,9 +1,12 @@
 import Layout from "../components/Layout";
-export default function products(){
-    return (
-        <Layout>
+import Link from "next/link";
+export default function products() {
+  return (
+    <Layout>
+        <Link href="/items">
+            Add Item
+        </Link>
 
-            <h1>products</h1>
-        </Layout>
-    )
+    </Layout>
+  );
 }
