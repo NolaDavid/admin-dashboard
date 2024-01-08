@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import { useState } from 'react'
+import axios from 'axios'
 export default function items(){
   const [productTitle, setProductTitle] = useState('33')
   const [productPrice, setProductPrice] = useState('333')
@@ -14,6 +15,19 @@ export default function items(){
   }
   const handleDescriptionChange = (event) =>{
     setProductDescription(event.target.value)
+  }
+
+  const saveItem = (e) => {
+    e.preventDefault()
+    const data = {productTitle,productPrice,productDescription};
+    try {
+    console.log("called?")
+     const saveItemResponse =  axios.post("/api/products",data).then((res) => console.log("data",res))
+    }
+    catch(error) {
+      console.log("error saving item to db", erro)
+    }
+    
   }
     return(
       <Layout>
@@ -101,7 +115,7 @@ export default function items(){
               </div>
             </div>
             <Link className="flex flex-col gap-2 ml-4 " href={"/products"}>
-              <button onClick={() =>  console.log(productDescription,productPrice,productTitle)} className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-amber-700"
+              <button onClick={saveItem} className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-blue-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-amber-700"
 >             Add Product
 
               </button>
