@@ -2,11 +2,12 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 import { useState } from 'react'
 import axios from 'axios'
+import {useRouter} from "next/router";
 export default function items(){
-  const [productTitle, setProductTitle] = useState('33')
-  const [productPrice, setProductPrice] = useState('333')
-  const [productDescription, setProductDescription] = useState('333')
-
+  const [title, setProductTitle] = useState('33')
+  const [price, setProductPrice] = useState('333')
+  const [descript, setProductDescription] = useState('333')
+  const router = useRouter()
   const handlePriceChange = (event) =>{
     setProductPrice(event.target.value)
   }
@@ -17,15 +18,15 @@ export default function items(){
     setProductDescription(event.target.value)
   }
 
-  const saveItem = (e) => {
+  const saveItem = async(e) => {
     e.preventDefault()
-    const data = {productTitle,productPrice,productDescription};
+    const data = {title,price,descript};
     try {
     console.log("called?")
-     const saveItemResponse =  axios.post("/api/products",data).then((res) => console.log("data",res))
+     const saveItemResponse =  axios.post("/api/products",data).then((res) => router.push('/products'))
     }
     catch(error) {
-      console.log("error saving item to db", erro)
+      console.log("error saving item to db", error)
     }
     
   }
@@ -47,7 +48,7 @@ export default function items(){
                 </label>
                 <input
                 onChange={handleTitleChange}
-                value={productTitle}
+                value={title}
                   type="text"
                   name="name"
                   id="name"
@@ -72,7 +73,7 @@ export default function items(){
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="$2999"
                   required=""
-                  value={productPrice}
+                  value={price}
                 />
               </div>
               <div>
@@ -107,7 +108,7 @@ export default function items(){
                 <textarea
                   id="description"
                   rows="8"
-                  value={productDescription}
+                  value={descript}
                   onChange={handleDescriptionChange}
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Your description here"
