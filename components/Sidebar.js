@@ -2,7 +2,7 @@ import Link from "next/link";
 import { signOut } from "next-auth/react";
 export default function Sidebar() {
   return (
-    <aside className="sidebar">
+    <aside className="sidebar bg-blue-900">
       <div className="sidebar--title mb-5 ml-2">
         <h1 className="text-grey">Five0Forge</h1>
       </div>

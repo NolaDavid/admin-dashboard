@@ -21,11 +21,13 @@ useEffect(() => {
        <ul>
         {products.map((product) => {
           return(
-            <div>
-                          <h1>{product.title}</h1>
-            <h1>{product.price}</h1>
-            <h1>{product.description}</h1>
-            <h1>{product.images}</h1>
+            <div key={product.id}>
+            <h1 key={product.id}>{product.title}</h1>
+            <h1 key={product.id}>{product.price}</h1>
+            <h1 key={product.id}>{product.description}</h1>
+            <h1 key={product.id}>{product.images}</h1>
+            <button key={product.id} className="bg-orange-500 text-white font-bold">Edit</button>
+            <button key={product.id}  className="bg-red-800 text-white font-bold">Delete</button>
             </div>
 
           )
