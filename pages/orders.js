@@ -8,7 +8,7 @@ export default function orders(){
         Orders
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <table class="table-fixed">
+      <table class="table-auto">
   <thead>
     <tr>
       <th>Date</th>
